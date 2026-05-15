@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Canteen</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <h1 class="logo">Smart Canteen</h1>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="#">Profile</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+            <h2>Order Food Easily in Campus</h2>
+
+            <p>
+                Browse menu items and place your order quickly.
+            </p>
+
+           <a href="#menu">
+               <button>Explore Menu</button>
+           </a>
+        </div>
+
+    </section>
+
+    <!-- MENU SECTION -->
+
+    <section class="menu-section" id="menu">
+
+        <h2>Today's Specials</h2>
+
+        <div class="menu-container">
+
+            <!-- CARD 1 -->
+
+            <div class="food-card">
+
+                <img src="images/burger.jpg" alt="Burger">
+
+                <h3>Veg Burger</h3>
+
+                <p>₹80</p>
+
+                <button onclick="addToCart('Veg Burger',80,'images/burger.jpg')">
+                           Add to Cart
+                </button>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="food-card">
+
+                <img src="images/dosa.jpg" alt="Dosa">
+
+                <h3>Masala Dosa</h3>
+
+                <p>₹60</p>
+
+                <button onclick="addToCart('Masala Dosa',60,'images/dosa.jpg')">
+                          Add to Cart
+                </button>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="food-card">
+
+                <img src="images/sandwich.jpg" alt="Sandwich">
+
+                <h3>Sandwich</h3>
+
+                <p>₹50</p>
+
+                <button onclick="addToCart('Sandwich',50,'images/sandwich.jpg')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
