@@ -12,27 +12,45 @@ body{
 /* NAVBAR */
 
 .navbar{
-    background-color: orange;
+    background-color: #ff8800;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 18px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo{
     color: white;
+    font-size: 28px;
+    font-weight: bold;
 }
+
+/* NAV LINKS */
 
 .nav-links{
     display: flex;
+    align-items: center;
+    gap: 30px;
     list-style: none;
-    gap: 20px;
+}
+
+.nav-links li{
+    list-style: none;
 }
 
 .nav-links a{
     color: white;
     text-decoration: none;
+    font-size: 18px;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover{
+    color: black;
 }
 
 /* HERO */
@@ -204,6 +222,233 @@ body{
     padding: 12px 20px;
     border: none;
     background-color: orange;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* CATEGORY SECTION */
+
+.category-section{
+    padding: 40px;
+    text-align: center;
+}
+
+.category-section h2{
+    margin-bottom: 30px;
+}
+
+.category-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.category-card{
+    background-color: white;
+    padding: 18px 35px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.category-card:hover{
+    transform: translateY(-5px);
+    background-color: orange;
+    color: white;
+}
+
+/* ADMIN PANEL */
+
+.admin-section{
+    padding: 50px;
+}
+
+.admin-section h2{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.admin-card{
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* TOGGLE SWITCH */
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider{
+    background-color: orange;
+}
+
+input:checked + .slider:before{
+    transform: translateX(26px);
+}
+
+/* STUDENT PANEL */
+
+.student-section{
+    padding: 50px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.student-card{
+    background-color: white;
+    width: 350px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.student-card h2{
+    margin-bottom: 20px;
+}
+
+.student-card p,
+.student-card li{
+    margin-bottom: 10px;
+}
+
+/* INSTRUCTIONS */
+
+.instructions{
+    padding: 50px;
+    text-align: center;
+}
+
+.instructions h2{
+    margin-bottom: 30px;
+}
+
+.instruction-container{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.instruction-card{
+    background-color: white;
+    width: 250px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+
+.available{
+    color: green;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+
+.footer{
+    background-color: #ff8800;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.footer h3{
+    margin-bottom: 10px;
+}
+
+/* BACK BUTTON */
+
+.back-btn-container{
+    padding: 20px 40px;
+}
+
+.back-btn{
+    padding: 10px 18px;
+    border: none;
+    background-color: #ff8800;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.available-text{
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* ADD ITEM */
+
+.add-item-box{
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.add-item-box input,
+.add-item-box select{
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+}
+
+.add-item-box button{
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    background-color: #ff8800;
     color: white;
     border-radius: 8px;
     cursor: pointer;

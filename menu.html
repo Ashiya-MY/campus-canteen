@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Menu</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<nav class="navbar">
+
+    <h1 class="logo">
+        Smart Canteen
+    </h1>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="menu.html">Menu</a>
+        </li>
+
+        <li>
+            <a href="cart.html">Cart</a>
+        </li>
+
+        <li>
+            <a href="student.html">Student Panel</a>
+        </li>
+
+        <li>
+            <a href="admin.html">Admin Panel</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<section class="category-section">
+
+    <h2>Food Categories</h2>
+
+    <div class="category-container">
+
+        <button class="category-card"
+        onclick="filterItems('all')">
+            All
+        </button>
+
+        <button class="category-card"
+        onclick="filterItems('breakfast')">
+            Breakfast
+        </button>
+
+        <button class="category-card"
+        onclick="filterItems('lunch')">
+            Lunch
+        </button>
+
+        <button class="category-card"
+        onclick="filterItems('snacks')">
+            Snacks
+        </button>
+
+    </div>
+
+</section>
+
+<section class="menu-section">
+
+    <h2>Today's Specials</h2>
+
+    <div class="menu-container">
+
+        <div class="food-card snacks">
+
+            <img src="images/burger.jpg">
+
+            <h3>Veg Burger</h3>
+
+            <p>₹80</p>
+
+            <p id="burgerStatus" class="available">
+                Available
+            </p>
+
+            <button onclick="addToCart('Veg Burger',80,'images/burger.jpg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div class="food-card breakfast">
+
+            <img src="images/dosa.jpg">
+
+            <h3>Masala Dosa</h3>
+
+            <p>₹60</p>
+
+            <p class="available">
+                Available
+            </p>
+
+            <button onclick="addToCart('Masala Dosa',60,'images/dosa.jpg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div class="food-card lunch">
+
+            <img src="images/sandwich.jpg">
+
+            <h3>Sandwich</h3>
+
+            <p>₹50</p>
+
+            <p class="available">
+                Available
+            </p>
+
+            <button onclick="addToCart('Sandwich',50,'images/sandwich.jpg')">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+
+    <h3>Smart College Canteen</h3>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+<script>
+
+window.onload = function(){
+
+    let burgerAvailability =
+    localStorage.getItem("burger");
+
+    if(burgerAvailability === "Unavailable"){
+
+        let status =
+        document.getElementById("burgerStatus");
+
+        status.innerText = "Unavailable";
+
+        status.style.color = "red";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

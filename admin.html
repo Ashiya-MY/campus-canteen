@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Panel</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+
+        <h1 class="logo">
+            Admin Panel
+        </h1>
+
+    </nav>
+    <div class="back-btn-container">
+
+    <a href="index.html">
+
+        <button class="back-btn">
+            ← Back to Home
+        </button>
+
+    </a>
+
+</div>
+
+    <section class="admin-section">
+
+        <h2>Manage Food Items</h2>
+
+        <!-- ADD ITEM BOX -->
+
+<div class="add-item-box">
+
+    <h3>Add New Item</h3>
+
+    <input type="text"
+    placeholder="Food Name">
+
+    <input type="number"
+    placeholder="Price">
+
+    <select>
+
+        <option>Breakfast</option>
+
+        <option>Lunch</option>
+
+        <option>Snacks</option>
+
+    </select>
+
+    <button>
+        Add Item
+    </button>
+
+</div>
+
+        <!-- FOOD ITEM -->
+
+        <div class="admin-card">
+
+    <div>
+
+        <h3>Veg Burger</h3>
+
+        <p>Category: Snacks</p>
+
+        <p id="status1" class="available-text">
+            Available
+        </p>
+
+    </div>
+
+   <label class="switch">
+
+        <input type="checkbox"
+         checked
+         onchange="toggleAvailability(this,'burger')">
+
+        <span class="slider"></span>
+
+    </label>
+
+</div>
+
+        <!-- FOOD ITEM -->
+
+        <div class="admin-card">
+
+            <div>
+
+                <h3>Masala Dosa</h3>
+
+                <p>Category: Breakfast</p>
+
+            </div>
+
+            <label class="switch">
+
+                <input type="checkbox">
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+        <!-- FOOD ITEM -->
+
+        <div class="admin-card">
+
+            <div>
+
+                <h3>Sandwich</h3>
+
+                <p>Category: Lunch</p>
+
+            </div>
+
+            <label class="switch">
+
+                <input type="checkbox" checked>
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
