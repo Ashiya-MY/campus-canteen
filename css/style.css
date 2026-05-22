@@ -129,8 +129,16 @@ body{
     border-radius: 12px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 25px rgba(158, 78, 21, 0.2);
     padding-bottom: 20px;
+}
+
+.food-card{
+    transition: 0.3s ease;
+}
+
+.food-card:hover{
+    transform: translateY(-5px);
 }
 
 .food-card img{
@@ -178,7 +186,11 @@ body{
 
 .cart-section h2{
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.cart-section #totalPrice {
+    margin-top: 20px;
 }
 
 .cart-card{
@@ -190,7 +202,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 25px rgba(158, 78, 21, 0.2);
 }
 
 .cart-card img{
@@ -201,13 +213,14 @@ body{
 .quantity button{
     padding: 8px 14px;
     border: none;
-    background-color: orange;
+    background-color: #D97757;
     color: white;
     cursor: pointer;
+    gap: 15px;
 }
 
 .time-slot{
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -218,7 +231,7 @@ body{
 
 .confirm-btn{
     display: block;
-    margin: 40px auto;
+    margin: 20px auto;
     padding: 12px 25px;
     border: none;
     background: linear-gradient(135deg, #D97757, #a23c1a);
@@ -241,7 +254,7 @@ body{
     padding: 50px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 25px rgba(158, 78, 21, 0.2);
 }
 
 .success-card h1{
@@ -254,8 +267,9 @@ body{
 
 .success-card button{
     padding: 12px 20px;
+    margin-top: 20px;
     border: none;
-    background-color: orange;
+    background: linear-gradient(135deg, #D97757, #a23c1a);
     color: white;
     border-radius: 8px;
     cursor: pointer;
@@ -301,6 +315,7 @@ body{
 
 .admin-section{
     padding: 50px;
+    padding-top: 10px;
 }
 
 .admin-section h2{
@@ -316,7 +331,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 25px rgba(158, 78, 21, 0.2);
 }
 
 /* TOGGLE SWITCH */
@@ -359,7 +374,8 @@ body{
 }
 
 input:checked + .slider{
-    background-color: orange;
+    /* background: linear-gradient(135deg, #D97757, #a23c1a); */
+    background-color: #D97757;
 }
 
 input:checked + .slider:before{
@@ -381,7 +397,7 @@ input:checked + .slider:before{
     width: 350px;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 25px rgba(158, 78, 21, 0.2);
 }
 
 .student-card h2{
@@ -468,11 +484,20 @@ input:checked + .slider:before{
 .back-btn{
     padding: 10px 18px;
     border: none;
-    background-color: #ff8800;
+    background: linear-gradient(135deg, #D97757, #a23c1a);
     color: white;
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+}
+
+.back-btn{
+    transition: 0.3s ease;
+}
+
+.back-btn:hover{
+    filter: brightness(1.1);
+    transform: translateY(-2px);
 }
 
 .available-text{
@@ -487,7 +512,7 @@ input:checked + .slider:before{
     padding: 30px;
     border-radius: 12px;
     margin-bottom: 40px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 25px rgba(158, 78, 21, 0.2);
 }
 
 .add-item-box input,
@@ -501,8 +526,17 @@ input:checked + .slider:before{
     margin-top: 20px;
     padding: 12px 20px;
     border: none;
-    background-color: #ff8800;
+    background: linear-gradient(135deg, #D97757, #a23c1a);
     color: white;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.add-item-box button{
+    transition: 0.3s ease;
+}
+
+.add-item-box button:hover{
+    filter: brightness(1.1);
+    transform: translateY(-2px);
 }
