@@ -107,7 +107,7 @@
 
             <p>₹60</p>
 
-            <p class="available">
+            <p id="dosaStatus" class="available">
                 Available
             </p>
 
@@ -125,9 +125,9 @@
 
             <p>₹50</p>
 
-            <p class="available">
+            <p id="sandwichStatus" class="available">
                 Available
-            </p>
+           </p>
 
             <button onclick="addToCart('Sandwich',50,'images/sandwich.jpg')">
                 Add to Cart
@@ -151,19 +151,37 @@
 
 window.onload = function(){
 
-    let burgerAvailability =
-    localStorage.getItem("burger");
+    let items = [
+        "burger",
+        "dosa",
+        "sandwich"
+    ];
 
-    if(burgerAvailability === "Unavailable"){
+    items.forEach(item => {
+
+        let availability =
+        localStorage.getItem(item);
 
         let status =
-        document.getElementById("burgerStatus");
+        document.getElementById(item + "Status");
 
-        status.innerText = "Unavailable";
+        if(availability === "Unavailable"){
 
-        status.style.color = "red";
+            status.innerText = "Unavailable";
 
-    }
+            status.style.color = "red";
+
+        }
+
+        else{
+
+            status.innerText = "Available";
+
+            status.style.color = "green";
+
+        }
+
+    });
 
 }
 

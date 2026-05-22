@@ -63,7 +63,7 @@
 
         <!-- FOOD ITEM -->
 
-        <div class="admin-card">
+<div class="admin-card">
 
     <div>
 
@@ -71,17 +71,17 @@
 
         <p>Category: Snacks</p>
 
-        <p id="status1" class="available-text">
+        <p id="burgerText" class="available-text">
             Available
         </p>
 
     </div>
 
-   <label class="switch">
+    <label class="switch">
 
         <input type="checkbox"
-         checked
-         onchange="toggleAvailability(this,'burger')">
+        id="burgerToggle"
+        onchange="toggleAvailability(this,'burger','burgerText')">
 
         <span class="slider"></span>
 
@@ -91,47 +91,60 @@
 
         <!-- FOOD ITEM -->
 
-        <div class="admin-card">
+<div class="admin-card">
 
-            <div>
+    <div>
 
-                <h3>Masala Dosa</h3>
+        <h3>Masala Dosa</h3>
 
-                <p>Category: Breakfast</p>
+        <p>Category: Breakfast</p>
 
-            </div>
+        <p id="dosaText" class="available-text">
+            Available
+        </p>
 
-            <label class="switch">
+    </div>
 
-                <input type="checkbox">
+    <label class="switch">
 
-                <span class="slider"></span>
+        <input type="checkbox"
+        id="dosaToggle"
+        onchange="toggleAvailability(this,'dosa','dosaText')">
 
-            </label>
+        <span class="slider"></span>
 
-        </div>
+    </label>
+
+</div>
 
         <!-- FOOD ITEM -->
 
-        <div class="admin-card">
+ <div class="admin-card">
 
-            <div>
+    <div>
 
-                <h3>Sandwich</h3>
+        <h3>Sandwich</h3>
 
-                <p>Category: Lunch</p>
+        <p>Category: Lunch</p>
 
-            </div>
+        <p id="sandwichText"
+        class="available-text">
+            Available
+        </p>
 
-            <label class="switch">
+    </div>
 
-                <input type="checkbox" checked>
+    <label class="switch">
 
-                <span class="slider"></span>
+        <input type="checkbox"
+        id="sandwichToggle"
+        onchange="toggleAvailability(this,'sandwich','sandwichText')">
 
-            </label>
+        <span class="slider"></span>
 
-        </div>
+    </label>
+
+</div>
 
     </section>
     <footer class="footer">
@@ -140,5 +153,53 @@
 
     </footer>
 
+    <script src="js/script.js"></script>
+     
+  <script>
+
+  window.onload = function(){
+
+    let items = [
+        "burger",
+        "dosa",
+        "sandwich"
+    ];
+
+    items.forEach(item => {
+
+        let availability =
+        localStorage.getItem(item);
+
+        let toggle =
+        document.getElementById(item + "Toggle");
+
+        let text =
+        document.getElementById(item + "Text");
+
+        if(availability === "Unavailable"){
+
+            toggle.checked = false;
+
+            text.innerText = "Unavailable";
+
+            text.style.color = "red";
+
+        }
+
+        else{
+
+            toggle.checked = true;
+
+            text.innerText = "Available";
+
+            text.style.color = "green";
+
+        }
+
+    });
+
+}
+
+</script>
 </body>
 </html>

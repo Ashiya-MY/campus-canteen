@@ -129,17 +129,28 @@ function filterItems(category){
 
 }
 
-function toggleAvailability(toggle, itemName){
+function toggleAvailability(toggle, itemName, textId){
+
+    let statusText =
+    document.getElementById(textId);
 
     if(toggle.checked){
 
         localStorage.setItem(itemName, "Available");
+
+        statusText.innerText = "Available";
+
+        statusText.style.color = "green";
 
     }
 
     else{
 
         localStorage.setItem(itemName, "Unavailable");
+
+        statusText.innerText = "Unavailable";
+
+        statusText.style.color = "red";
 
     }
 
