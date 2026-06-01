@@ -17,7 +17,11 @@
 
             <p>Your food order has been placed successfully.</p>
 
-            <h3>Token Number: 102</h3>
+            <h3 id="tokenNumber"></h3>
+
+            <p id="orderTotal"></p>
+
+            <p id="orderTime"></p>
 
             <a href="index.html">
                 <button>Back to Home</button>
@@ -27,5 +31,24 @@
 
     </section>
 
+    <script>
+
+        window.onload = function(){
+
+            document.getElementById("tokenNumber").innerText =
+            "Token Number: " +
+            localStorage.getItem("orderToken");
+
+            document.getElementById("orderTotal").innerText =
+            "Total Amount: " +
+            localStorage.getItem("orderTotal");
+
+            document.getElementById("orderTime").innerText =
+            "Pickup Time: " +
+            localStorage.getItem("orderTime");
+
+        }
+
+        </script>
 </body>
 </html>

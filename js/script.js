@@ -2,6 +2,13 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price, image){
 
+    let availability = localStorage.getItem(name);
+
+    if(availability === "Unavailable"){
+        alert("Sorry! This item is currently unavailable.");
+        return;
+    }
+
     let existingItem = cart.find(item => item.name === name);
 
     if(existingItem){
@@ -20,9 +27,8 @@ function addToCart(name, price, image){
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Item added to cart!");
-    // window.location.href = "cart.html";
 
+    alert("Item added to cart!");
 }
 
 function loadCart(){
@@ -32,6 +38,28 @@ function loadCart(){
     let total = 0;
 
     cartContainer.innerHTML = "";
+
+    if(cart.length === 0){
+
+        cartContainer.innerHTML = `
+            <div class="empty-cart">
+                <h3>🛒 Your cart is empty.</h3>
+                <a href="menu.html">
+                    <button class="confirm-btn">
+                        Browse Menu
+                    </button>
+                </a>
+            </div>
+        `;
+
+        document.getElementById("totalPrice").style.display = "none";
+
+        document.querySelector(".time-slot").style.display = "none";
+
+        document.querySelector(".confirmOrderBtn").style.display = "none";
+
+        return;
+    }
 
     cart.forEach((item, index) => {
 
@@ -43,7 +71,7 @@ function loadCart(){
 
             <img src="${item.image}">
 
-            <div>
+            <div class="cart-info">
                 <h3>${item.name}</h3>
                 <p>₹${item.price}</p>
             </div>
@@ -154,4 +182,42 @@ function toggleAvailability(toggle, itemName, textId){
 
     }
 
+}
+
+function placeOrder(){
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if(cart.length === 0){
+        alert("Your cart is empty.");
+        return;
+    }
+
+    let total = document.getElementById("totalPrice").innerText;
+
+    let timeSlot =
+    document.querySelector('.time-slot input').value;
+
+    if(timeSlot === ""){
+        alert("Please select a pickup time.");
+        return;
+    }
+
+    let token = localStorage.getItem("tokenNumber");
+
+    if(!token){
+        token = 100;
+    }
+
+    token = parseInt(token) + 1;
+
+    localStorage.setItem("tokenNumber", token);
+
+    localStorage.setItem("orderTotal", total);
+    localStorage.setItem("orderTime", timeSlot);
+    localStorage.setItem("orderToken", token);
+
+    localStorage.removeItem("cart");
+
+    window.location.href = "success.html";
 }

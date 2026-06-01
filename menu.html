@@ -151,24 +151,23 @@
 
 window.onload = function(){
 
-    let items = [
-        "burger",
-        "dosa",
-        "sandwich"
-    ];
+    const items = {
+        "Veg Burger": "burgerStatus",
+        "Masala Dosa": "dosaStatus",
+        "Sandwich": "sandwichStatus"
+    };
 
-    items.forEach(item => {
+    for(let item in items){
 
         let availability =
         localStorage.getItem(item);
 
         let status =
-        document.getElementById(item + "Status");
+        document.getElementById(items[item]);
 
         if(availability === "Unavailable"){
 
             status.innerText = "Unavailable";
-
             status.style.color = "red";
 
         }
@@ -176,12 +175,11 @@ window.onload = function(){
         else{
 
             status.innerText = "Available";
-
             status.style.color = "green";
 
         }
 
-    });
+    }
 
 }
 

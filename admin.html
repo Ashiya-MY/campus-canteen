@@ -81,7 +81,7 @@
 
         <input type="checkbox"
         id="burgerToggle"
-        onchange="toggleAvailability(this,'burger','burgerText')">
+        onchange="toggleAvailability(this,'Veg Burger','burgerText')">
 
         <span class="slider"></span>
 
@@ -109,7 +109,7 @@
 
         <input type="checkbox"
         id="dosaToggle"
-        onchange="toggleAvailability(this,'dosa','dosaText')">
+        onchange="toggleAvailability(this,'Masala Dosa','dosaText')">
 
         <span class="slider"></span>
 
@@ -138,7 +138,7 @@
 
         <input type="checkbox"
         id="sandwichToggle"
-        onchange="toggleAvailability(this,'sandwich','sandwichText')">
+        onchange="toggleAvailability(this,'Sandwich','sandwichText')">
 
         <span class="slider"></span>
 
@@ -159,44 +159,50 @@
 
   window.onload = function(){
 
-    let items = [
-        "burger",
-        "dosa",
-        "sandwich"
-    ];
+    const items = {
+        "Veg Burger": {
+            toggle: "burgerToggle",
+            text: "burgerText"
+        },
+        "Masala Dosa": {
+            toggle: "dosaToggle",
+            text: "dosaText"
+        },
+        "Sandwich": {
+            toggle: "sandwichToggle",
+            text: "sandwichText"
+        }
+    };
 
-    items.forEach(item => {
+    for(let item in items){
 
         let availability =
         localStorage.getItem(item);
 
         let toggle =
-        document.getElementById(item + "Toggle");
+        document.getElementById(items[item].toggle);
 
         let text =
-        document.getElementById(item + "Text");
+        document.getElementById(items[item].text);
 
-        if(availability === "Unavailable"){
-
-            toggle.checked = false;
-
-            text.innerText = "Unavailable";
-
-            text.style.color = "red";
-
-        }
-
-        else{
+        if(availability === "Available"){
 
             toggle.checked = true;
 
             text.innerText = "Available";
-
             text.style.color = "green";
 
         }
+        else{
 
-    });
+            toggle.checked = false;
+
+            text.innerText = "Unavailable";
+            text.style.color = "red";
+
+        }
+
+    }
 
 }
 
